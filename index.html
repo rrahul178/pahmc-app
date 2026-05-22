@@ -9,7 +9,6 @@
 <meta name="apple-mobile-web-app-title" content="PAHMC">
 <meta name="description" content="President Abdul Hamid Medical College — Notice Board & Class Routine">
 <title>PAHMC App</title>
-<link rel="manifest" href="#" id="manifest-link">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f6f9;min-height:100vh}
@@ -24,19 +23,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .dot.loading{background:#FAC775;animation:blink 1s infinite}
 .dot.error{background:#F09595}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-
 .tabs{display:flex;background:white;border-bottom:1px solid #e8edf2;position:sticky;top:62px;z-index:99}
 .tab{flex:1;padding:12px 8px;font-size:13px;font-weight:500;color:#666;border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
 .tab.active{color:#0C447C;border-bottom-color:#0C447C}
 .tab svg{width:16px;height:16px}
-
 .content{padding:12px;max-width:600px;margin:0 auto}
-
 .filter-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:none}
 .filter-row::-webkit-scrollbar{display:none}
 .chip{padding:6px 14px;border-radius:20px;font-size:12px;border:1px solid #dde3ea;background:white;color:#555;cursor:pointer;white-space:nowrap;transition:all .15s;font-family:inherit}
 .chip.active{background:#0C447C;color:white;border-color:#0C447C}
-
 .notice-list{display:flex;flex-direction:column;gap:10px}
 .card{background:white;border-radius:12px;padding:14px 16px;border-left:3px solid #378ADD;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
 .card.exam{border-left-color:#BA7517}
@@ -52,19 +47,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .badge.general{background:#E6F1FB;color:#042C53}
 .card-body{font-size:13px;color:#4a5568;line-height:1.6;margin-bottom:8px}
 .card-date{font-size:11px;color:#888}
-
 .fab{position:fixed;bottom:24px;right:20px;width:52px;height:52px;border-radius:50%;background:#0C447C;color:white;border:none;font-size:26px;cursor:pointer;box-shadow:0 4px 14px rgba(12,68,124,0.4);display:flex;align-items:center;justify-content:center;transition:transform .15s}
 .fab:active{transform:scale(.93)}
-
 .batch-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:none}
 .batch-row::-webkit-scrollbar{display:none}
 .batch-chip{padding:6px 14px;border-radius:8px;font-size:12px;font-weight:500;border:1px solid #dde3ea;background:white;color:#555;cursor:pointer;white-space:nowrap;font-family:inherit}
 .batch-chip.active{background:#0C447C;color:white;border-color:#0C447C}
-
 .routine-wrap{overflow-x:auto;border-radius:12px;background:white;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
 .routine-table{width:100%;border-collapse:collapse;min-width:420px}
 .routine-table th{background:#0C447C;color:white;font-size:11px;font-weight:600;padding:8px 6px;text-align:center}
-.routine-table th:first-child{text-align:left;padding-left:10px;min-width:70px}
+.routine-table th:first-child{text-align:left;padding-left:10px;min-width:80px}
 .routine-table td{font-size:11px;padding:8px 6px;text-align:center;border-bottom:1px solid #f0f3f7;color:#333}
 .routine-table td:first-child{font-weight:500;color:#555;text-align:left;padding-left:10px;font-size:10px}
 .routine-table tr:last-child td{border-bottom:none}
@@ -78,7 +70,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .subj.medicine{background:#E6F1FB;color:#042C53}
 .subj.surgery{background:#FCEBEB;color:#501313}
 .subj.free{color:#aaa}
-
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:flex-end;justify-content:center}
 .modal-bg.show{display:flex}
 .modal{background:white;border-radius:20px 20px 0 0;padding:20px 20px 32px;width:100%;max-width:600px}
@@ -92,13 +83,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn-cancel{flex:1;padding:12px;border:1px solid #dde3ea;border-radius:10px;background:white;color:#555;font-size:14px;cursor:pointer;font-family:inherit}
 .btn-save{flex:2;padding:12px;border:none;border-radius:10px;background:#0C447C;color:white;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
 .btn-save:disabled{opacity:.5}
-
 .empty{text-align:center;padding:40px 20px;color:#aaa;font-size:13px}
-.empty-icon{font-size:32px;margin-bottom:8px}
 .skeleton{background:#eef0f3;border-radius:12px;animation:shimmer 1.2s infinite}
 @keyframes shimmer{0%,100%{opacity:.5}50%{opacity:1}}
 .error-box{background:#FFF3F3;color:#8B0000;border:1px solid #fcc;border-radius:10px;padding:10px 14px;font-size:12px;margin-bottom:12px}
-
 .section{display:none}
 .section.show{display:block}
 </style>
@@ -131,7 +119,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <div class="content">
-  <!-- NOTICE -->
   <div id="notice-section" class="section show">
     <div id="notice-error" class="error-box" style="display:none"></div>
     <div class="filter-row">
@@ -148,7 +135,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
 
-  <!-- ROUTINE -->
   <div id="routine-section" class="section">
     <div id="routine-error" class="error-box" style="display:none"></div>
     <div class="batch-row">
@@ -167,10 +153,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- FAB -->
-<button class="fab" onclick="openModal()" id="fab" title="নতুন নোটিশ">+</button>
+<button class="fab" onclick="openModal()" id="fab">+</button>
 
-<!-- MODAL -->
 <div class="modal-bg" id="modal-bg" onclick="bgClose(event)">
   <div class="modal">
     <div class="modal-handle"></div>
@@ -208,33 +192,48 @@ function setSyncStatus(s){
   else{dot.classList.add('error');txt.textContent='Error';}
 }
 
+// JSONP fetch — CORS সমস্যা নেই
+function jsonp(url){
+  return new Promise((resolve,reject)=>{
+    const cb='cb_'+Date.now();
+    const script=document.createElement('script');
+    window[cb]=function(data){resolve(data);delete window[cb];script.remove();};
+    script.onerror=()=>{reject(new Error('JSONP failed'));delete window[cb];script.remove();};
+    script.src=url+'&callback='+cb;
+    document.head.appendChild(script);
+    setTimeout(()=>{if(window[cb]){reject(new Error('Timeout'));delete window[cb];script.remove();}},10000);
+  });
+}
+
 async function fetchNotices(){
   setSyncStatus('loading');
   try{
-    const r=await fetch(API+'?action=getNotices');
-    const data=await r.json();
-    if(Array.isArray(data)){allNotices=data;renderNotices();setSyncStatus('ok');}
-    else throw new Error();
-  }catch{
+    const data=await jsonp(API+'?action=getNotices');
+    if(Array.isArray(data)){
+      allNotices=data;
+      renderNotices();
+      setSyncStatus('ok');
+      document.getElementById('notice-error').style.display='none';
+    } else throw new Error('bad data');
+  }catch(e){
     setSyncStatus('error');
     document.getElementById('notice-error').style.display='block';
-    document.getElementById('notice-error').textContent='Sheets থেকে নোটিশ লোড হয়নি। Notices tab আছে কিনা দেখো।';
-    document.getElementById('notice-list').innerHTML='<div class="empty"><div class="empty-icon">📭</div>কোনো নোটিশ নেই</div>';
+    document.getElementById('notice-error').textContent='Sheets থেকে লোড হয়নি। Apps Script নতুন করে deploy করো।';
+    document.getElementById('notice-list').innerHTML='<div class="empty">📭 কোনো নোটিশ নেই</div>';
   }
 }
 
 async function fetchRoutine(batch){
   document.getElementById('routine-body').innerHTML='<tr><td colspan="7" style="padding:24px;text-align:center;color:#aaa;font-size:12px">লোড হচ্ছে...</td></tr>';
   try{
-    const r=await fetch(API+'?action=getRoutine&batch='+batch);
-    const data=await r.json();
+    const data=await jsonp(API+'?action=getRoutine&batch='+encodeURIComponent(batch));
     if(Array.isArray(data)&&data.length){
       renderRoutine(data);
       document.getElementById('routine-error').style.display='none';
-    }else{
+    } else {
       document.getElementById('routine-error').style.display='block';
-      document.getElementById('routine-error').textContent=batch+' batch-এর routine data নেই। Sheet-এ যোগ করো।';
-      document.getElementById('routine-body').innerHTML='<tr><td colspan="7" style="padding:24px;text-align:center;color:#aaa;font-size:12px">কোনো data নেই</td></tr>';
+      document.getElementById('routine-error').textContent=batch+' batch-এর routine data নেই।';
+      document.getElementById('routine-body').innerHTML='<tr><td colspan="7" style="padding:24px;text-align:center;color:#aaa">কোনো data নেই</td></tr>';
     }
   }catch{
     document.getElementById('routine-error').style.display='block';
@@ -245,7 +244,7 @@ async function fetchRoutine(batch){
 function renderNotices(){
   const list=document.getElementById('notice-list');
   const filtered=currentFilter==='all'?allNotices:allNotices.filter(n=>n.category===currentFilter);
-  if(!filtered.length){list.innerHTML='<div class="empty"><div class="empty-icon">📭</div>কোনো নোটিশ নেই</div>';return;}
+  if(!filtered.length){list.innerHTML='<div class="empty">📭 কোনো নোটিশ নেই</div>';return;}
   list.innerHTML=filtered.map(n=>`
     <div class="card ${n.category||'general'}">
       <div class="card-top">
@@ -309,30 +308,13 @@ async function saveNotice(){
   const btn=document.getElementById('save-btn');
   btn.disabled=true;btn.textContent='সংরক্ষণ হচ্ছে...';
   try{
-    await fetch(API,{method:'POST',body:JSON.stringify({action:'addNotice',title:t,body:b,category:c}),headers:{'Content-Type':'application/json'}});
+    await fetch(API,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'addNotice',title:t,body:b,category:c}),headers:{'Content-Type':'application/json'}});
     document.getElementById('n-title').value='';
     document.getElementById('n-body').value='';
     closeModal();
-    await fetchNotices();
+    setTimeout(fetchNotices,2000);
   }catch{alert('সংরক্ষণ ব্যর্থ। আবার চেষ্টা করো।');}
   btn.disabled=false;btn.textContent='সংরক্ষণ করুন';
-}
-
-// PWA manifest inline
-const manifest={name:'PAHMC App',short_name:'PAHMC',description:'President Abdul Hamid Medical College',start_url:'.',display:'standalone',background_color:'#f4f6f9',theme_color:'#0C447C',icons:[{src:'https://pahmc.edu.bd/wp-content/uploads/2023/09/cropped-pahmch_logo2-1-270x270.png',sizes:'270x270',type:'image/png'}]};
-const blob=new Blob([JSON.stringify(manifest)],{type:'application/json'});
-document.getElementById('manifest-link').href=URL.createObjectURL(blob);
-
-// Service Worker
-if('serviceWorker' in navigator){
-  const swCode=`
-    const CACHE='pahmc-v1';
-    const OFFLINE=['${location.href}'];
-    self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(OFFLINE))));
-    self.addEventListener('fetch',e=>e.respondWith(fetch(e.request).catch(()=>caches.match(e.request))));
-  `;
-  const swBlob=new Blob([swCode],{type:'application/javascript'});
-  navigator.serviceWorker.register(URL.createObjectURL(swBlob)).catch(()=>{});
 }
 
 fetchNotices();
